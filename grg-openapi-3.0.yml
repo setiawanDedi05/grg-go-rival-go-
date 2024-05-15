@@ -1,0 +1,47 @@
+openapi: '3.0.3'
+info:
+  title: GRG
+  description: "Open Api for GRG RESTful API"
+  version: '1.0'
+  contact:
+    name: "Dedi Setiawan"
+    email: "dssetiawan05@gmail.com"
+    url: "https://ds-porto.my.id"
+  license:
+    name: APACHE 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+  - url: "https://{{environtment}}.ds-porto.my.id/api/v1"
+    description: "GRG RESTful API Server"
+    variables: 
+      environtment: 
+        default: "dev"
+        description: "server environtment"
+        enum:
+          - "dev"
+          - "qa"
+          - "prod"
+externalDocs:
+  url: https://youtube.com/@codededy
+  description: youtube code dedy
+paths:
+  /players:
+    get:
+      responses:
+        '200':
+          description: OK
+        '500':
+          description: INTERNAL SERVER ERROR
+    post:
+      responses:
+        '200':
+          description: OK
+        '500':
+          description: INTERNAL SERVER ERROR
+  /teams:
+    get:
+      responses:
+        '200':
+          description: OK
+        '500':
+          description: INTERNAL SERVER ERROR
