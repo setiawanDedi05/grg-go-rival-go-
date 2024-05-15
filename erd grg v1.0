@@ -1,0 +1,95 @@
+@startuml
+
+entity Player {
+    email : text <PK>
+    --
+    name : text
+    password : text
+    image : text
+}
+
+entity Team {
+    id : text <PK>
+    --
+    name : text
+    logo : text
+    email_pic : text
+    password : text
+}
+
+entity Gor {
+    id : text <PK>
+    --
+    name : text
+    email_pic : text
+    password : text
+}
+
+entity Alamat {
+    id : text <PK>
+    --
+    email_player : text <FK>
+    --
+    jalan : text
+    kota : text
+    provinsi : text
+}
+
+entity Lapangan {
+    id : text <PK>
+    --
+    id_gor : text <FK>
+    --
+    name : text
+    price : number
+    image : text
+}
+
+entity Time_Setting {
+    id : text <PK>
+    --
+    id_lapang : text
+    start_time : text
+    end_time : text
+}
+
+object Match {
+    id : text <PK>
+    __
+    id_team_home : text <FK>
+    id_lapang : text <FK>
+    id_time : text <FK>
+    --
+    date : text
+}
+
+Player }|--o| Team
+note on link
+    Member
+end note
+
+Player }|--|| Alamat
+note on link
+    Has A
+end note
+
+Team }|--|| Alamat
+note on link
+    Has A
+end note
+
+Gor }|--|| Alamat
+note on link
+    Has A
+end note
+
+Gor ||--|{ Lapangan
+note on link
+    Has Many
+end note
+
+Time_Setting }o-- Match
+Team }o-- Match
+Lapangan }o-- Match
+
+@enduml
