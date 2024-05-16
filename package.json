@@ -1,0 +1,41 @@
+{
+  "name": "grg-go-rival-go",
+  "version": "1.0.0",
+  "description": "social media application for futsal lover",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/setiawanDedi05/grg-go-rival-go.git"
+  },
+  "keywords": [
+    "social",
+    "media",
+    "soccer",
+    "futsal"
+  ],
+  "author": "Dedi Setiawan",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/setiawanDedi05/grg-go-rival-go/issues"
+  },
+  "homepage": "https://github.com/setiawanDedi05/grg-go-rival-go#readme",
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0",
+    "prisma": "^5.14.0"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.24.5",
+    "@prisma/client": "^5.14.0",
+    "babel-jest": "^29.7.0"
+  }
+}
